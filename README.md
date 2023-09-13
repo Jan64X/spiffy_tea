@@ -1,7 +1,7 @@
-# PLACEHOLDER
+# Spicy Keycaps
 
 
-##please kill me
+##Prodáváme Keycapy na klávesnice :)
 
 * K
 * Y
