@@ -3,6 +3,6 @@
 
 ##please kill me
 
-*- K
-+ Y
-* S
+*K
+*Y
+*S
