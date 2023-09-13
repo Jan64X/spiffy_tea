@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bouncing Ball</title>
+    <title>Bouncing Balls</title>
     <style>
         body {
             margin: 0;
             overflow: hidden;
         }
 
-        #ball {
+        .ball {
             width: 50px;
             height: 50px;
             background-color: #3498db;
@@ -20,34 +20,41 @@
     </style>
 </head>
 <body>
-    <div id="ball"></div>
-
     <script>
-        const ball = document.getElementById('ball');
-        let x = 0;
-        let y = 0;
-        let xSpeed = 15;
-        let ySpeed = 15;
+        function createBall() {
+            const ball = document.createElement('div');
+            ball.className = 'ball';
+            document.body.appendChild(ball);
 
-        function updateBallPosition() {
-            x += xSpeed;
-            y += ySpeed;
+            let x = Math.random() * (window.innerWidth - ball.offsetWidth);
+            let y = Math.random() * (window.innerHeight - ball.offsetHeight);
 
-            // Bounce off the horizontal edges
-            if (x + ball.offsetWidth >= window.innerWidth || x <= 0) {
-                xSpeed *= -1;
+            let xSpeed = (Math.random() > 0.5 ? 1 : -1) * (2 + Math.random() * 3);
+            let ySpeed = (Math.random() > 0.5 ? 1 : -1) * (2 + Math.random() * 3);
+
+            function updateBallPosition() {
+                x += xSpeed;
+                y += ySpeed;
+
+                // Bounce off the horizontal edges
+                if (x + ball.offsetWidth >= window.innerWidth || x <= 0) {
+                    xSpeed *= -1;
+                }
+
+                // Bounce off the vertical edges
+                if (y + ball.offsetHeight >= window.innerHeight || y <= 0) {
+                    ySpeed *= -1;
+                }
+
+                ball.style.transform = `translate(${x}px, ${y}px)`;
+                requestAnimationFrame(updateBallPosition);
             }
 
-            // Bounce off the vertical edges
-            if (y + ball.offsetHeight >= window.innerHeight || y <= 0) {
-                ySpeed *= -1;
-            }
-
-            ball.style.transform = `translate(${x}px, ${y}px)`;
-            requestAnimationFrame(updateBallPosition);
+            updateBallPosition();
         }
 
-        updateBallPosition();
+        createBall(); // Create the initial ball
+        setInterval(createBall, 2000); // Create a new ball every 2 seconds
     </script>
 </body>
 </html>
