@@ -3,6 +3,6 @@
 
 ##Prodáváme Keycapy na klávesnice :)
 
-* K
-* Y
-* S
+* Jan Petrlík
+* Leona Flutková
+* Lukáš Nevrla
