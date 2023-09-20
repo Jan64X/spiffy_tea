@@ -1,7 +1,7 @@
 # Spicy Keycaps
 
 
-##Prodáváme Keycapy na klávesnice :)
+#Prodáváme Keycapy na klávesnice :)
 
 * Jan Petrlík
 * Leona Flutková
